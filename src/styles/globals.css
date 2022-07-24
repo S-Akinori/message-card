@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+:root {
+  --base-background: #F6F6F6;
+  --base-color: #F6F6F6;
+  --base-text-color: #080D1B;
+  --base-cont: #080D1B;
+  --main-color: #fbe5e7;
+  --main-color-rgb: 251,229,231;
+  --main-color-cont: #FFF;
+  --accent-color: #A69463;
+  --accent-cont: #FFF;
+  --max-width: 1280px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+body {
+  color: var(--base-text-color);
+  line-height: 1.75;
+  letter-spacing: 0.2em;
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: "Source Han Serif", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Arial", "Meiryo", sans-serif;
+}
+main {
+  padding-bottom: 3rem;
+}
+video {
+  width: 100%;
+}
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+h2 {
+  font-size: 1.25rem;
+}
+h3 {
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.title-border-b {
+  position: relative;
+}
+.title-border-b::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: var(--accent-color);
+  width: 3rem;
+  height: 1px;
+}
+a {
+  color: var(--base-text-color);
+  transition: 300ms;
+}
+a:hover {
+  opacity: 0.8;
+}
+img {
+  max-width: 100%;
+}
+
+button:disabled {
+  background: #acacac;
+  color: #FFF;
+}
+button:disabled:hover {
+  background: #acacac;
+  color: #FFF;
+}
+
+ul li, .list .list-item {
+  padding: 0.5rem 0 0.5rem 1rem;
+  position: relative;
+}
+ul li::before, .list .list-item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  background: var(--accent-color);
+  width: 8px;
+  height: 2px;
+}
+
+input:not([type="checkbox"]), textarea {
+  display: block;
+  background: var(--base-background);
+  padding: 0.5rem;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid var(--base-background);
+  width: 100%;
+  transition: 300ms;
+  outline: none;
+}
+input:focus, textarea:focus {
+  border: 1px solid var(--accent-color);
+}
+label {
+  padding: 0.5rem;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+.text {
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+
+.ttl-wrapper {
+  display: inline-block;
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--main-color);
+}
+.title_en {
+  font-size: 3rem;
+}
+.font_en {
+  font-family: 'Cormorant Garamond', serif;
+}
+.d-pc {
+  display: block;
+}
+.d-sp {
+  display: none;
+}
+
+.absolute-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+  }
+  .title_en {
+    font-size: 2rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+  h3 {
+    font-size: 1.175rem;
+  }
+  .d-pc {
+    display: none;
+  }
+  .d-sp {
+    display: block;
+  }
+}
+
+/*** animation ***/
+.fadeIn {
+  animation: fadeIn 300ms linear both;
+}
+.fadeInTrans {
+  opacity: 0;
+  transition: 300ms;
+}
+.fadeInTrans.active {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 300ms linear both;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.growLeft {
+  animation: growLeft 500ms linear both;
+}
+@keyframes growLeft {
+  0% {
+    transform: scale(0, 1);
+    transform-origin: left center;
+  }
+  100% {
+    transform-origin: left center;
+    transform: scaleX(1. 1);
+  }
+}
+@keyframes growRight {
+  0% {
+    transform: scale(0, 1);
+    transform-origin: right center;
+  }
+  100% {
+    transform-origin: right center;
+    transform: scaleX(1. 1);
+  }
+}
+
+.fadeInBottom {
+  animation: fadeInBottom 500ms linear both;
+}
+
+@keyframes fadeInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes growX {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
